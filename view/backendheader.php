@@ -119,7 +119,7 @@
                 </li>
 
                 <li>
-                    <a class="app-menu__item" href="dashboard.html">
+                    <a class="app-menu__item" href="<?php echo $GLOBALS['view_path'] ?>brand_list">
                         <i class="app-menu__icon icofont-ui-tag"></i>
                         <span class="app-menu__label">
                             Brands 
@@ -137,7 +137,7 @@
                 </li>
 
                 <li>
-                    <a class="app-menu__item" href="dashboard.html">
+                    <a class="app-menu__item" href="<?php echo $GLOBALS['view_path'] ?>subcategory_list">
                         <i class="app-menu__icon icofont-tags"></i>
                         <span class="app-menu__label">
                             Sub-Category 
@@ -146,7 +146,7 @@
                 </li>
 
                 <li>
-                    <a class="app-menu__item" href="dashboard.html">
+                    <a class="app-menu__item" href="<?php echo $GLOBALS['view_path'] ?>category_list">
                         <i class="app-menu__icon icofont-tag"></i>
                         <span class="app-menu__label">
                             Category 

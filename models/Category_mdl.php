@@ -32,5 +32,58 @@
 			return $rows;
 
 		}
+
+		function edit_data($id){
+			$sql = "SELECT * FROM categories WHERE id=:v1";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':v1', $id);
+			$stmt->execute();
+
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			return $row;
+		}
+
+		function update_data($id, $data){
+			$sql = "UPDATE categories SET name=:v1, logo=:v2 WHERE id=:v3";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':v1', $data['name']);
+			$stmt->bindParam(':v2', $data['photo']);
+			$stmt->bindParam(':v3', $id);
+			$stmt->execute();
+
+			$row = $stmt->rowCount();
+
+			return $row;
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 ?>

@@ -41,7 +41,7 @@
                                         <?php echo $name; ?> 
                                     </td>
                                     <td>
-                                        <a href="" class="btn btn-warning">
+                                        <a href="<?php echo $GLOBALS['view_path'] ?>category_edit?id=<?php echo $id ?>" class="btn btn-warning">
                                             <i class="icofont-ui-settings"></i>
                                         </a>
 

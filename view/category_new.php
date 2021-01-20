@@ -7,7 +7,7 @@
             <h1> <i class="icofont-list"></i> Category Form </h1>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
-            <a href="" class="btn btn-outline-primary">
+            <a href="<?php echo $GLOBALS['view_path'] ?>category_list" class="btn btn-outline-primary">
                 <i class="icofont-double-left"></i>
             </a>
         </ul>
