@@ -40,6 +40,11 @@
 	elseif($router == 'category_update'){
 		$category->update();
 	}
+	elseif ($router == 'category_delete') {
+		$id = $_POST['id'];
+
+		$category->delete($id);
+	}
 
 	// Brand
 	elseif ($router == 'brand_list') {
@@ -72,11 +77,9 @@
 		$subcategory->insert();
 	}
 
-
-
 	elseif($router == ''){
-		echo "Frontend";
-
+		$brands = $brand->read();
+		
 		require $GLOBALS['view_file_path']."home.php";
 	}
 

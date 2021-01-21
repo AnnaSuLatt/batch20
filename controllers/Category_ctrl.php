@@ -77,7 +77,15 @@
 
 		}
 
+		function delete($id){
+			$category_mdl = new Category_mdl();
 
+			$category_mdl->delete_data($id);
+
+			$url = $GLOBALS['view_path'].'category_list';
+
+			header('location:'.$url);
+		}
 
 
 

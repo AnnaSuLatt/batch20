@@ -60,7 +60,16 @@
 
 
 
+		function delete_data($id){
+			$sql = "DELETE FROM categories WHERE id=:v1";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':v1', $id);
+			$stmt->execute();
 
+			$row = $stmt->rowCount();
+
+			return $row;
+		}
 
 
 

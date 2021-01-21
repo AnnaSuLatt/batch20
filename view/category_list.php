@@ -45,9 +45,14 @@
                                             <i class="icofont-ui-settings"></i>
                                         </a>
 
-                                        <a href="" class="btn btn-outline-danger">
-                                            <i class="icofont-close"></i>
-                                        </a>
+                                        <form class="d-inline-block" action="<?php echo $GLOBALS['view_path'] ?>category_delete" method="POST" onsubmit="return confirm('Are you sure want to delete?')">
+
+                                            <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                            <button class="btn btn-outline-danger">
+                                                <i class="icofont-close"></i>
+                                            </button>
+                                        </form>
+
                                     </td>
                                 </tr>
                             	<?php } ?>

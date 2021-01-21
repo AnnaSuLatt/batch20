@@ -37,7 +37,7 @@
         <!-- Navbar-->
         <header class="app-header">
             <a class="app-header__logo" href="index.html">
-                <img src="<?php $GLOBALS['view_path'] ?>template/backend/logo/logo_wh_transparent.png" style="width: 50px; height: 50px">
+                <img src="<?php $GLOBALS['view_path'] ?>template/logo/logo_wh_transparent.png" style="width: 50px; height: 50px">
                 Shopules
             </a>
             
