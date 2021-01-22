@@ -38,5 +38,16 @@
 			return $row;
 
 		}
+
+		function getallBycategoryid($id){
+			$sql = "SELECT * FROM subcategories WHERE category_id = :v1";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':v1', $id);
+			$stmt->execute();
+			
+			$rows = $stmt->fetchAll();
+
+			return $rows;
+		}
 	}
 ?>

@@ -19,6 +19,14 @@
 	require $GLOBALS['controller_file_path']."Subcategory_ctrl.php";
 	$subcategory = new Subcategory_ctrl();
 
+	// Item Controller
+	require $GLOBALS['controller_file_path']."Item_ctrl.php";
+	$item = new Item_ctrl();
+
+	// Auth Controller
+	require $GLOBALS['controller_file_path']."Auth_ctrl.php";
+	$auth = new Auth_ctrl();
+
 	// Category
 	if ($router == 'category_list') {
 		$categories = $category->read();
@@ -79,9 +87,66 @@
 
 	elseif($router == ''){
 		$brands = $brand->read();
-		
+		$categories = $category->read();
+
+		$randomcategories = $category->randomcategories();
+
+		$discountitems = $item->discountitems();
+		$newitems = $item->newitems();
+		$randomitems = $item->randomitems();
+
 		require $GLOBALS['view_file_path']."home.php";
 	}
+
+	elseif($router == 'cart'){
+
+		$brands = $brand->read();
+		$categories = $category->read();
+
+		require $GLOBALS['view_file_path']."cart.php";
+	}
+
+	elseif($router == 'login'){
+		$brands = $brand->read();
+		$categories = $category->read();
+
+		require $GLOBALS['view_file_path']."login.php";
+	}
+
+
+	elseif($router == 'register'){
+		$brands = $brand->read();
+		$categories = $category->read();
+
+		require $GLOBALS['view_file_path']."register.php";
+	}
+
+
+
+	elseif($router == 'signup'){
+		$auth->register();
+	}
+
+	elseif($router == 'signin'){
+		$auth->login();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

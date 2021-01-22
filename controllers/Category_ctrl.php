@@ -88,15 +88,12 @@
 		}
 
 
+		function randomcategories(){
+			$category_mdl = new Category_mdl();
+			$getrandomresults = $category_mdl->randomcategories_data();
 
-
-
-
-
-
-
-
-
+			return $getrandomresults;
+		}
 
 
 

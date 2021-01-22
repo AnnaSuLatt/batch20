@@ -73,7 +73,16 @@
 
 
 
+		function randomcategories_data(){
+			$sql = "SELECT * FROM categories ORDER BY rand() LIMIT 8";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->execute();
 
+			$rows = $stmt->fetchAll();
+
+			return $rows;
+
+		}
 
 
 

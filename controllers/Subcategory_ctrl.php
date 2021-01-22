@@ -38,5 +38,11 @@
 			header('location: '.$url);
 
 		}
+
+		function getallBycategoryid($id){
+			$subcategory_mdl = new Subcategory_mdl();
+			$getallresults = $subcategory_mdl->getallBycategoryid($id);
+			return $getallresults;
+		}
 	}
 ?>

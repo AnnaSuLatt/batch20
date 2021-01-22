@@ -117,5 +117,8 @@
     <!-- Owl Carousel -->
     <script type="text/javascript" src="<?php echo $GLOBALS['view_path'] ?>template/frontend/js/owl.carousel.js"></script>
 
+    <script type="text/javascript" src="<?php echo $GLOBALS['view_path'] ?>template/cart.js"></script>
+
+
 </body>
 </html>
