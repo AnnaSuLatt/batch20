@@ -48,8 +48,18 @@
 							<td colspan="3">
 
 						
+							<?php if(!isset($_SESSION['login_user'])){ 
+								$_SESSION['cartURL'] =$GLOBALS['view_path'].'cart';
+							?>
 								
+								<a href="<?php echo $GLOBALS['view_path'] ?>login" class="btn btn-secondary btn-block mainfullbtncolor"> Check Out </a>
+
+							<?php }	else { ?>
+
 								<a href="javascript:void(0)" class="btn btn-secondary btn-block mainfullbtncolor checkoutBtn"> Check Out </a>
+
+
+							<?php } ?>
 
 								
 								
@@ -78,6 +88,7 @@
 		
 
 	</div>
+
 
 <?php 
 	require 'frontendfooter.php';

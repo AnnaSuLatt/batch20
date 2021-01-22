@@ -117,6 +117,12 @@
     <!-- Owl Carousel -->
     <script type="text/javascript" src="<?php echo $GLOBALS['view_path'] ?>template/frontend/js/owl.carousel.js"></script>
 
+    <script type="text/javascript">
+    	var storeorderUrl = "<?php echo $GLOBALS['view_path'] ?>storeorder";
+    	var successorderUrl = "<?php echo $GLOBALS['view_path'] ?>successorder";
+
+    </script>
+
     <script type="text/javascript" src="<?php echo $GLOBALS['view_path'] ?>template/cart.js"></script>
 
 

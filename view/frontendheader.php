@@ -78,7 +78,13 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-10">
-						<a href="<?php echo $GLOBALS['view_path'] ?>login" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right"> Login | Sign-up </a>
+
+						<?php if(!isset($_SESSION['login_user'])){ ?>
+							<a href="<?php echo $GLOBALS['view_path'] ?>login" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right"> Login | Sign-up </a>
+
+						<?php } else{ ?>
+							<a href="<?php echo $GLOBALS['view_path'] ?>logout" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right"> Logout </a>
+						<?php } ?>
 
 						
 					</div>

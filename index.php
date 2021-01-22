@@ -27,6 +27,10 @@
 	require $GLOBALS['controller_file_path']."Auth_ctrl.php";
 	$auth = new Auth_ctrl();
 
+	// Order Controller
+	require $GLOBALS['controller_file_path']."Order_ctrl.php";
+	$order = new Order_ctrl();
+
 	// Category
 	if ($router == 'category_list') {
 		$categories = $category->read();
@@ -131,11 +135,20 @@
 		$auth->login();
 	}
 
+	elseif($router  == 'logout'){
+		$auth->logout();
+	}
 
+	elseif ($router == 'storeorder') {
+		$order->store();
+	}
 
+	elseif ($router == 'successorder') {
+		$brands = $brand->read();
+		$categories = $category->read();
 
-
-
+		require $GLOBALS['view_file_path']."ordersuccess.php";
+	}
 
 
 

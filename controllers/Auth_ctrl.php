@@ -41,21 +41,22 @@
 				'email'	=>	$email,
 				'password'	=>	$password
 			);
-
 			$auth_mdl = new Auth_mdl();
 			$loginresult = $auth_mdl->login_data($data);
 
 			session_start();
-
-
 			if ($loginresult) {
-				// $_SESSION['login_user'] = $loginresult;
+				$_SESSION['login_user'] = $loginresult;
 
 				$roleid = $loginresult['roleid'];
-
 				if ($roleid == 2) {
-					$url = $GLOBALS['view_path'];
-					header('location:'.$url);
+					if (isset($_SESSION['cartURL'])) {
+						header('location:'.$_SESSION['cartURL']);
+					}else{
+						$url = $GLOBALS['view_path'];
+						header('location:'.$url);
+					}
+					
 				}else{
 					$url = $GLOBALS['view_path'].'category_list';
 					header('location:'.$url);
@@ -68,10 +69,22 @@
 			}
 		}
 
+		function logout(){
+			session_start();
+
+			session_destroy();
+
+			$url = $GLOBALS['view_path'];
+			header('location:'.$url);
+
+		}
 
 
+		function order(){
+			$cart =   $_POST['cart'];
 
-
+			var_dump($cart);
+		}
 
 
 

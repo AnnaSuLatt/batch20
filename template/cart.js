@@ -253,6 +253,80 @@ $(document).ready(function(){
 	});
 
 
+	$('.checkoutBtn').click(function(){
+		var cart = localStorage.getItem('cart');
+		var cartArray = JSON.parse(cart);
+
+		var note = $('#notes').val();
+		var total =  0;
+		$.each(cartArray, function(i, v) {
+			var unitprice = v.price;
+			var discount = v.discount;
+			var qty = v.qty;
+
+			if (discount) {
+				var price = discount;
+			}else{
+				var price = unitprice;
+			}
+
+			var  subtotal =  price*qty;
+
+			total += subtotal++;
+
+		});
+
+		$.ajax({
+            url: storeorderUrl,
+            type: 'POST',
+            dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+            data: {
+                cart: cartArray,
+                total: total,
+                note: note,
+
+            },
+            success:function(result){
+                alert(result);
+            }
+        })
+        .always(function() {
+            localStorage.clear();
+			location.href = successorderUrl;
+        });
+
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });
